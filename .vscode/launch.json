@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Summarize.js Headless",
+      "program": "${workspaceFolder}/summarize.js",
+      "args": [
+        "--headless"
+      ],
+      "request": "launch",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "node"
+    },
+    {
+      "name": "Debug Summarize.js",
+      "program": "${workspaceFolder}/summarize.js",
+      "args": [
+        "--head"
+      ],
+      "request": "launch",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "node"
+    }
+  ]
+}
