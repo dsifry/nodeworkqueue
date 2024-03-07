@@ -9,6 +9,7 @@
   "author": "David L. Sifry",
   "license": "Apache-2.0",
   "dependencies": {
-    "bullmq": "^5.4.2"
+    "bullmq": "^5.4.2",
+    "dotenv": "^16.4.5"
   }
 }
