@@ -14,6 +14,21 @@ var log = require("console-log-level")({
 let taskQueue = [];
 let isProcessingQueue = false;
 
+// Use this as a template for future functions. Note the internal Promise - that's where all the code goes
+// that relies on exclusive access to the resource
+async function use_this_template(resource, args) {
+  log.debug("use_this_template STARTING...");
+  resource.log.push({ cmd: "use_this_template", params: args });
+  const body = await new Promise((resolve) => {
+    // This is where the bulk of the work happens, ensuring it is done sequentially
+    resolve("This is where we put the return value");
+  });
+  log.debug("use_this_template: END.");
+  // Return the type of output and the body in a format applicable to its type
+  const retval = { type: "application/json", body: JSON.stringify({ body }) };
+  return retval;
+}
+
 async function favicon(resource) {
   log.debug("favicon: STARTING...");
   resource.log.push({ cmd: "favicon", params: null });
